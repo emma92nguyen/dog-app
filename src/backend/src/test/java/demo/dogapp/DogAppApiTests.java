@@ -72,6 +72,8 @@ public class DogAppApiTests {
 
         mockMvc.perform(get("/breeds/detail/akita"))
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.breed").value("Akita"))
+                .andExpect(jsonPath("$.imageUrls").value("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
                 .andDo(print());
     }
 

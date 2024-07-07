@@ -102,8 +102,6 @@ public class DogAppAnalyticsApiTests {
                 .logTime(LocalDateTime.parse("2024-07-07T18:05:15.317343"))
                 .build();
 
-        SecurityContextHolder.clearContext();
-
         when(dogAppRequestLoggingService.getAllRequestsBetween(any(), any()))
                 .thenReturn(List.of(log1));
         mockMvc.perform(get("/admin/report/tracking"))
