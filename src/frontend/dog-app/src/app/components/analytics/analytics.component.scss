@@ -1,0 +1,9 @@
+.log-table-container {
+  ::ng-deep {
+    div.mat-grid-tile-content {
+      align-items: start !important;
+      overflow: auto;
+      height: 100%;
+    }
+  }
+}
