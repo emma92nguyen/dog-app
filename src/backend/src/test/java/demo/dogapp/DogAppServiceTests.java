@@ -1,8 +1,8 @@
 package demo.dogapp;
 
 import demo.dogapp.dtos.DogBreedDto;
-import demo.dogapp.services.services.DogAppService;
-import demo.dogapp.services.services.DogCEOService;
+import demo.dogapp.services.DogAppService;
+import demo.dogapp.services.DogCEOService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

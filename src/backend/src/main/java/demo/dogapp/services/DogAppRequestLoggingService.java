@@ -1,7 +1,7 @@
-package demo.dogapp.services.services;
+package demo.dogapp.services;
 
 import demo.dogapp.entities.DogAppRequestLog;
-import demo.dogapp.repositories.repositories.DogAppRequestRepository;
+import demo.dogapp.repositories.DogAppRequestRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

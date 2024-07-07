@@ -1,7 +1,7 @@
 package demo.dogapp.interceptors;
 
 import demo.dogapp.entities.DogAppRequestLog;
-import demo.dogapp.services.services.DogAppRequestLoggingService;
+import demo.dogapp.services.DogAppRequestLoggingService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;

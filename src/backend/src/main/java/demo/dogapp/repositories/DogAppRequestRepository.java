@@ -1,4 +1,4 @@
-package demo.dogapp.repositories.repositories;
+package demo.dogapp.repositories;
 
 import demo.dogapp.entities.DogAppRequestLog;
 import org.springframework.data.jpa.repository.JpaRepository;

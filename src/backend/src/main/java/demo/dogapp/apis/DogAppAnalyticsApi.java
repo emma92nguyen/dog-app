@@ -1,7 +1,7 @@
 package demo.dogapp.apis;
 
 import demo.dogapp.entities.DogAppRequestLog;
-import demo.dogapp.services.services.DogAppRequestLoggingService;
+import demo.dogapp.services.DogAppRequestLoggingService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

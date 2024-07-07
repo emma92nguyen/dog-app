@@ -1,4 +1,4 @@
-package demo.dogapp.services.services;
+package demo.dogapp.services;
 
 import demo.dogapp.dtos.DogBreedDto;
 import demo.dogapp.exceptions.InvalidPageNumberException;

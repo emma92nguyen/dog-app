@@ -3,7 +3,7 @@ package demo.dogapp;
 import demo.dogapp.apis.DogAppAnalyticsApi;
 import demo.dogapp.configs.WebSecurityTestConfig;
 import demo.dogapp.entities.DogAppRequestLog;
-import demo.dogapp.services.services.DogAppRequestLoggingService;
+import demo.dogapp.services.DogAppRequestLoggingService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
