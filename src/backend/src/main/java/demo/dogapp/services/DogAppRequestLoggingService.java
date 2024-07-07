@@ -20,7 +20,7 @@ public class DogAppRequestLoggingService {
         this.dogAppRequestRepository.save(dogAppRequestLog);
     }
 
-    public List<DogAppRequestLog> getAllRequestsBetween(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<DogAppRequestLog> getAllRequestsBetween(final LocalDateTime startDate, final LocalDateTime endDate) {
         return this.dogAppRequestRepository.findByLogTimeBetweenOrderByLogTimeDesc(startDate, endDate);
     }
 }

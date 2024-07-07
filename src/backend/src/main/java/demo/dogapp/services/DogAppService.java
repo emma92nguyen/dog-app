@@ -16,6 +16,11 @@ public class DogAppService {
 
     private final DogCEOService dogCEOService;
 
+    private static final String PAGED_DATA_KEY = "dogBreeds";
+    private static final String CURRENT_PAGE_KEY = "currentPage";
+    private static final String TOTAL_ITEMS_KEY = "totalItems";
+    private static final String TOTAL_PAGES_KEY = "totalPages";
+
     public DogAppService(DogCEOService dogCEOService) {
         this.dogCEOService = dogCEOService;
     }
@@ -36,15 +41,15 @@ public class DogAppService {
                 List<String> pagedData = allBreeds.subList(startIndex, endIndex);
                 this.cacheDogBreedDetailForPaginatedData(pagedData);
 
-                response.put("dogBreeds", pagedData);
-                response.put("currentPage", pageNumber);
-                response.put("totalItems", allBreeds.size());
+                response.put(PAGED_DATA_KEY, pagedData);
+                response.put(CURRENT_PAGE_KEY, pageNumber);
+                response.put(TOTAL_ITEMS_KEY, allBreeds.size());
 
                 double totalPages = allBreeds.size() / pageSize;
                 if (allBreeds.size() % pageSize != 0) {
                     totalPages++;
                 }
-                response.put("totalPages", (int) totalPages);
+                response.put(TOTAL_PAGES_KEY, (int) totalPages);
             }
         } catch (Exception e) {
             log.error(e.getMessage());
@@ -57,7 +62,7 @@ public class DogAppService {
         return this.dogCEOService.getBreedByName(id);
     }
 
-    private void cacheDogBreedDetailForPaginatedData(List<String> breeds) {
+    private void cacheDogBreedDetailForPaginatedData(final List<String> breeds) {
         if (breeds != null) {
             breeds.forEach(this.dogCEOService::getBreedByName);
         }

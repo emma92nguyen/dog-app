@@ -35,10 +35,10 @@ public class DogCEOService {
     private static final String DOG_BREED_API = "/breed/";
 
     private static final String CACHE_DOG_BREED = "dog_breed";
-    public static final String CACHE_ALL_BREEDS = "all_breeds";
+    private static final String CACHE_ALL_BREEDS = "all_breeds";
 
     public DogCEOService(WebClient.Builder webClientBuilder) {
-        HttpClient httpClient = this.configureConnection(webClientBuilder);
+        HttpClient httpClient = this.configureConnection();
         this.webClient =
                 webClientBuilder
                         .clientConnector(new ReactorClientHttpConnector(httpClient))
@@ -46,7 +46,7 @@ public class DogCEOService {
                         .build();
     }
 
-    private HttpClient configureConnection(WebClient.Builder webClientBuilder) {
+    private HttpClient configureConnection() {
         return HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 10000)
                 .responseTimeout(Duration.ofMillis(10000))
