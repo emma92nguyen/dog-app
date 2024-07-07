@@ -66,7 +66,7 @@ public class DogAppApiTests {
     void shouldReturnDogBreed_whenBreedDataExists() throws Exception {
         DogBreedDto dogBreed = DogBreedDto.builder()
                 .breed("Akita")
-                .imageUrls(Arrays.asList("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
+                .imageUrls(List.of("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
                 .build();
         when(dogAppService.getDogBreedById("akita")).thenReturn(Optional.of(dogBreed));
 

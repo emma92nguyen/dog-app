@@ -37,10 +37,6 @@ public class DogAppServiceTests {
 
     @Test
     void shouldReturnListOfAllBreeds() {
-        Map<String, Object> dogBreeds = new HashMap<>();
-        dogBreeds.put("totalItems", 10);
-        dogBreeds.put("totalPages", 1);
-        dogBreeds.put("currentPage", 0);
         List<String> allBreeds = Arrays.asList("affenpinscher",
                 "african",
                 "airedale",
@@ -51,7 +47,6 @@ public class DogAppServiceTests {
                 "bakharwal-indian",
                 "basenji",
                 "beagle");
-        dogBreeds.put("dogBreeds", allBreeds);
         given(dogCEOService.getAllBreeds()).willReturn(allBreeds);
 
         Map<String, Object> result = dogAppService.getPaginatedData(0, 10);
@@ -72,7 +67,7 @@ public class DogAppServiceTests {
     void shouldReturnBreedData_whenBreedDataExists() {
         DogBreedDto dogBreed = DogBreedDto.builder()
                 .breed("akita")
-                .imageUrls(Arrays.asList("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
+                .imageUrls(List.of("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
                 .build();
         given(dogCEOService.getBreedByName("akita")).willReturn(Optional.of(dogBreed));
 
@@ -80,7 +75,7 @@ public class DogAppServiceTests {
         assertThat(result.isPresent()).isTrue();
         assertThat(result.get().getBreed()).isEqualTo("akita");
         assertThat(result.get().getImageUrls()).hasSize(1);
-        assertThat(result.get().getImageUrls().get(0)).isEqualTo("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg");
+        assertThat(result.get().getImageUrls().getFirst()).isEqualTo("https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg");
 
         verify(dogCEOService, times(1)).getBreedByName("akita");
     }

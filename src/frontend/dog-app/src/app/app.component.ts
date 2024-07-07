@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, Inject } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { BreedListComponent } from './components/breed-list/breed-list.component';
 import {
   MatSidenav,
