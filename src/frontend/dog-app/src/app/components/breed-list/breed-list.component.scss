@@ -1,0 +1,22 @@
+.breed-list-paginator {
+  width: 600px;
+}
+
+.breed-table {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.breed-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: lightsteelblue;
+}
