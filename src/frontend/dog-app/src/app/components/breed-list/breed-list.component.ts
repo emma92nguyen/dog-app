@@ -51,7 +51,7 @@ export class BreedListComponent implements OnInit {
 
   displayedColumns: string[] = ['name'];
 
-  length = 50;
+  length = 0;
   pageSize = 10;
   pageIndex = 0;
   pageSizeOptions = [5, 10];
@@ -95,7 +95,6 @@ export class BreedListComponent implements OnInit {
               this.paginatedData.push(listItem);
             });
           }
-          this.paginatedData.push();
         },
         error: (e) => console.error(e),
       });

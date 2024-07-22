@@ -53,7 +53,6 @@ export class AnalyticsComponent implements OnInit {
     'requestUrl',
     'logTime',
   ];
-  disabled = false;
 
   constructor(private dogAppAnalyticsService: DogAppAnalyticsService) {}
 
