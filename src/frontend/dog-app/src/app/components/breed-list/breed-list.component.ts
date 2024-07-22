@@ -19,6 +19,7 @@ import { MatInput } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { DogBreedListItem } from '../../models/dog-breed-list-item';
 import { DogAppService } from '../../services/dog-app-service/dog-app.service';
+import { isNil } from 'lodash';
 
 @Component({
   selector: 'app-breed-list',
@@ -81,8 +82,8 @@ export class BreedListComponent implements OnInit {
       .getPaginatedData(this.pageIndex, this.pageSize)
       .subscribe({
         next: (res) => {
-          this.length = res.totalItems;
-          if (res.dogBreeds.length > 0) {
+          if (!isNil(res.dogBreeds) && res.dogBreeds.length > 0) {
+            this.length = res.totalItems;
             this.paginatedData = [];
             res.dogBreeds.map((dogBreed: string, index: number) => {
               const listItem = {
